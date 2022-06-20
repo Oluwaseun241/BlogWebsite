@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+ <!-- Post Content-->
+ <!-- Post preview-->
+    {% for post in posts %}
+    <div class="post-preview">
+     <a href="{% url 'posts' %}">
+         <h2 class="post-title">{{post.title}}</h2>
+         <h3 class="post-subtitle">{{post.content|slice:"200"}}</h3>
+     </a>
+     <p class="post-meta">
+         Posted by
+         <a href="#!">{{post.author}} | {{post.created_on}}</a>
+     </p>
+    </div>
+    {% endfor %}
+
+{% endblock %}
